@@ -1,0 +1,488 @@
+html,body{
+    width: 100vw;
+    background-color:#f0f0f0;
+    font-family: Futura,'Century Gothic',"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+/* 
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    z-index: 1000;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic";
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+
+
+
+
+
+
+#splashbg {
+    display: none;
+}
+
+body.appear .splashbg {
+    display: block;
+    content: "";
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    background-color: #000;
+    animation-name: PageAnime;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes PageAnime {
+    0% {
+        transform-origin: left;
+        transform:scaleX(0);
+    }
+    50% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    50.001% {
+        transform-origin:right;
+        
+    }
+    100% {
+        transform-origin: right;
+        transform:scaleX(0);
+    }
+}
+
+#container {
+    opacity: 0;
+}
+
+
+body.appear #container {
+    animation-name: PageAnimeAppear;
+    animation-duration:1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes PageAnimeAppear {
+    0% {
+       opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+
+
+
+
+
+#info {
+    display: none;
+}
+
+
+
+
+
+header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index:  4;  
+    background-color: #F0F0F0;
+    opacity: 0.9;
+}
+#main {
+    padding-top: 50px;
+}
+
+.content{
+    width:1220px;
+    margin: 0 auto;
+    line-height: 120px;
+    font-size:20pt;
+}
+.content ul li{
+    list-style-type: none;
+    font-size: 70%;
+    line-height: 70px;
+}
+
+.burger-btn {
+    position: relative;
+    background-color: #000;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    z-index: 1000000;
+}
+.burger-btn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    top: 31px;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    width: 45%;
+}
+.burger-btn span:nth-of-type(1){
+    top: 15px;
+}
+
+.burger-btn span:nth-of-type(2){
+    top:23px;
+}
+.burger-btn.active span:nth-of-type(1){
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.burger-btn.active span:nth-of-type(2){
+    opacity: 0;
+}
+
+.burger-btn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+
+
+
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+li a {
+    height:70%;
+    margin-top: 0px;
+    position: relative;
+}
+li.current a,
+li a:hover{
+  color:#000;
+}
+li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: -25%;
+    /*線の形状*/
+    width: 150%;
+    height: 2px;
+    background:#000;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+li.current a::after,
+li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+#top_wrapper {
+    position:relative;
+    width: 100%;
+    height:760px;
+    margin-top: 120px;
+    perspective: 1600px;
+}
+
+
+#top_wrapper img, #blackcircle, #blackcircle2{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+}
+
+
+
+
+
+
+#blackcircle {
+    background-color: #000;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top:172px;
+    left:70px;
+    border-radius: 100%;
+    z-index: 3;
+}
+#blackcircle:hover{
+    transform: scale3d(2);
+}
+
+#blackcircle2 {
+    background-color: #000;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top:172px;
+    left:172px;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+#box_object {
+    background-color: #fff;
+    width: 1000px;
+    height:660px;
+    margin-left: 220px;
+    position:absolute;
+    top:100px;
+    z-index: 1;
+}
+
+
+#top_wrapper img {
+    position:absolute;
+    z-index: 2;
+    
+}
+
+.typo {
+    position: absolute;
+    top: 0;
+    left: 610px;
+}
+
+.btn_box {
+    margin-top: 10px;
+    display: block;
+    border: 1px solid #000;
+    width: 290px;
+    height: 80px;
+    display: flex;
+   
+}
+
+.btn_box:hover {
+    opacity: 1;
+    
+}
+.span_p {
+    line-height: 78px;
+    /* margin-left: 50px; */
+    font-family:Futura,'Century Gothic';
+    padding-left: 60px;
+    font-size: 20px;
+}
+
+.arrow {
+    position:relative;
+    display: inline-block;
+    /* padding-left: 20px; */
+    
+}
+.mover{
+    /*矢印と下線の基点とするためrelativeを指定*/
+	position: relative;
+    display: inline-block;
+    width:100%;
+}
+
+
+.mover::before{
+    content: '';
+    /*絶対配置で下線の位置を決める*/
+	position: absolute;
+    bottom:-8px;
+    left:15%;
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+
+
+.mover::after{
+    content: '';
+    /*絶対配置で矢印の位置を決める*/
+	position: absolute;
+    bottom:-3px;
+    right:0;
+    transform: rotate(35deg);
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+.mover:hover::before{
+    left:15%;
+}
+
+.mover:hover::after{
+    right:-5%;
+}
+
+a {
+    display: inline-block;
+    margin-top: 60px;
+}
+
+.profile {
+    width: 610px;
+    height: 589px;
+}
+.profile p .span_p{
+    width: 100%;
+}
+.profile img {
+    box-shadow: 30px 30px #DEDEDE;
+}
+
+#prw {
+    margin-top:-250px;
+}
+.arrow::before {
+    content: '';
+    width:20px;
+    height: 20px;
+    border: 0px;
+    border-top: 2px solid #000;
+    border-right:2px solid #000;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 30%;
+    left:0;
+    margin-top:6px;
+    margin-left: 180px;
+}
+
+.prof_wrapper {
+    display:flex;
+    margin-top: 500px;
+    padding-top: 120px;
+}
+
+.profile h1 {
+    font-size:60px;
+    margin-top: -30px;
+}
+
+.profile h2 {
+    font-size: 50px; 
+    line-height: 80px;
+    border-bottom: 3px solid #000;
+    padding-top: 50px;
+    padding-bottom: 130px;
+    
+}
+.profile h3 {
+    font-size: 27px;
+    line-height: 27px;
+    padding:20px 0;
+    border-bottom: 1px solid #000;
+}
+
+.exp {
+    padding-top: 16px;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.skillset {
+    width: 610px;
+    height: 589px;
+
+}
+
+.skillset img {
+    margin-top: 50px;
+}
+#skill_wrapper {
+    display:flex;
+    margin-top: 500px;
+    padding-top: 250px;
+}
+p{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+h3 {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.works{
+    width: 610px;
+    height: 800px;
+}
+.works h1 {
+    font-size:60px;
+    margin-top: -30px;
+}
+
+.works h2 {
+    font-size: 50px; 
+    line-height: 80px;
+    border-bottom: 3px solid #000;
+    padding-top: 50px;
+    padding-bottom: 130px;
+    
+}
+.works h3 {
+    font-size: 27px;
+    line-height: 27px;
+    padding:20px 0;
+    border-bottom: 1px solid #000;
+}
+
+.btn_box2 {
+    margin-left: 320px;
+    margin-top: 40px;
+    display: block;
+    border: 1px solid #000;
+    width: 290px;
+    height: 80px;
+    display: flex;
+}
+.btn_box2:hover {
+    opacity: 1;
+    
+}
+#works_wrapper {
+    display:flex;
+    margin-top: 600px;
+    padding-top: 250px;
+}
+
+
+
